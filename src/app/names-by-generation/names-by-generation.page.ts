@@ -16,7 +16,7 @@ export class NamesByGenerationPage implements OnInit {
   generation: OneGeneration;
   private allGenerationsSub: Subscription;
   private oneGenerationSub: Subscription;
-  private userName: string;
+  public userName: string;
 
   constructor(private fetchingService: FetchingService, private authService: AuthService) { }
 
