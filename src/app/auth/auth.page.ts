@@ -26,7 +26,7 @@ export class AuthPage implements OnInit {
 
   ngOnInit() { }
 
-  onLogin(username: string, password: string) {
+  onLogin(username, password) {
     this.isLoading = true;
     this.loadingCtrl
       .create({ keyboardClose: true, message: 'Logging in...' })
