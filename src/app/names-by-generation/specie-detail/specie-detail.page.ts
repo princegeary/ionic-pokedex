@@ -46,7 +46,7 @@ export class SpecieDetailPage implements OnInit, OnDestroy {
     this.isLoading = true;
     this.specieSub = this.fetchingService.fetchOneSpecie(specieNameID).subscribe(specie => {
       this.specie = specie;
-      this.specieImageUrl = `https://pokeres.bastionbot.org/images/pokemon/${specie.id}.png`;
+      this.specieImageUrl = `https://img.pokemondb.net/artwork/large/${specie.name}.jpg`;
       this.specieFound = true;
       this.isLoading = false;
     }, error => {
