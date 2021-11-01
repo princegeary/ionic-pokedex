@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="ion-padding-bottom ion-padding-top">
+        <ion-col size-sm="6"
+                 offset-sm="3">
+          <ion-title class="ion-text-center">Master {{userName | titlecase}} Pokedex</ion-title>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6"
+                 offset-sm="3"
+                 class="ion-text-center">
+          <ion-select [ngModel]="'Select'"
+                      interface="popover"
+                      (ionChange)="onSelectedGeneration($event)"
+                      placeholder="Select a Generation">
+            <ion-select-option *ngFor="let generation of generations?.results; let i = index"
+                               class="ion-text-center">{{i+1}}
+            </ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="6"
+               offset-sm="3"
+               class="ion-text-center">
+        <ion-virtual-scroll [items]="generation?.pokemon_species"
+                            approxItemHeight="70px">
+          <ion-item *virtualItem="let specie"
+                    detail
+                    [routerLink]="['/', 'pokemons', specie?.name]">
+            <p>{{ specie?.name | titlecase }}</p>
+          </ion-item>
+        </ion-virtual-scroll>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<!-- [routerLink]="['/', 'places', 'tabs', 'discover', place.id]" -->
+<!-- <ion-select-option *ngFor="let generation of generations?.results">{{generation?.name | uppercase}} -->

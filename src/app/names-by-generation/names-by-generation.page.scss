@@ -1,0 +1,18 @@
+ion-select {
+    background-color: transparent;
+    border: thin solid black;
+    border-radius: 2px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  .popover{
+    position: relative !important;
+    margin: 0 auto !important;
+    left: auto !important;
+    top: auto !important;
+}
